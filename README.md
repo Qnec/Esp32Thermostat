@@ -36,4 +36,4 @@ The thermostat 5-wire common should be connected to the NC pin of all of the rel
 
 ## After verifying all parts fit and wiring a few of the relays together
 
-![Part fitted into case without wires connecting them](https://github.com/Qnec/Esp32Thermostat/tree/main/images/FittedCleaned.jpg)
+![Part fitted into case without wires connecting them](images/FittedCleaned.jpg)
