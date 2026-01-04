@@ -1,17 +1,18 @@
 #include <SPI.h>
 #include <WiFi.h>
 #include "Thermostat.h"
+#include "NetworkConfig.h"
 
 #define REQ_TYPE_BUF_LEN 4
 #define REQ_URI_BUF_LEN 40
 #define MAX_ULONG (0UL - 1UL)
 
 WiFiServer server(80);
-Thermostat thermostat(1 ,22 ,23 ,15 ,3000);
+Thermostat thermostat(1 ,22 ,23 ,15 ,300000);
 
-String ssid = "";     //  your network SSID (name)
-String chosenSSID = "";
-String pass = "";  // your network password
+String ssid = "";     //connected network SSID
+String chosenSSID = SSID; //String appearing in the SSID of your chosen network, e.g. if the network name was asusZ465GT and chosenSSID was asus it would select that network assuming no other network had asus in the name
+String pass = PASS;  // your network password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 
 String extractValueFromOneLevelJSON(String& json, String&& key) {
